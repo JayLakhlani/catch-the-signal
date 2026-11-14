@@ -1,6 +1,6 @@
 # Catch the Signal
 
-A mobile-friendly browser experiment that measures how predictable visual cues affect people's estimates of elapsed time. I built the activity for Group 57's Technical Communication research project.
+A mobile-friendly browser experiment that measures how predictable visual cues affect people's estimates of elapsed time. I built the activity for Technical Communication research project.
 
 **My contribution:** I developed the browser activity, created the Google Form, and built the integration that saves activity responses and links them to the follow-up questionnaire.
 
