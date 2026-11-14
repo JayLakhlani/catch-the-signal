@@ -1,0 +1,238 @@
+<!doctype html><html lang="en" data-mode="demo"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="A short timing game for the Group 57 student research study."><meta name="theme-color" content="#f5f5ef"><meta name="apple-mobile-web-app-capable" content="yes"><title>Catch the Signal · Group 57</title>
+<style>
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:16px;line-height:1.6;color:#172a2c;background:#f5f5ef}*{box-sizing:border-box}body{margin:0}button,a,input{font:inherit}button,a{touch-action:manipulation}header{max-width:1120px;margin:auto;padding:25px 30px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #d5dcd3}header strong{font-size:15px;font-weight:650;letter-spacing:.01em}.brand:before{content:'';width:11px;height:11px;display:inline-block;border-radius:100%;background:#2b6546;margin-right:10px}header span{color:#546254;font-size:13px}main{max-width:1040px;padding:42px 30px 50px;margin:auto}.overline{color:#496149;text-transform:uppercase;font-size:11px;font-weight:700;letter-spacing:.16em}h1{font-size:clamp(48px,7vw,82px);font-weight:650;letter-spacing:-.055em;line-height:1.03;margin:14px 0 24px}h2{font-size:32px;letter-spacing:-.035em;line-height:1.2;margin:15px 0}h3{font-size:18px;line-height:1.4}.lead{font-size:19px;line-height:1.6;color:#506052;max-width:530px}.layout{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:start;margin-top:30px}.signal-art{height:190px;display:grid;place-items:center;position:relative;background:radial-gradient(circle at center,#b5d2ac55,transparent 65%);margin:10px 0 25px}.orbit{width:170px;height:170px;border:1px solid #b9c9b2;border-radius:50%;display:grid;place-items:center}.orbit>div{width:112px;height:112px;border:1px solid #a5bc9b;border-radius:50%;display:grid;place-items:center}.core{width:55px;height:55px;border-radius:50%;background:#255e42;box-shadow:0 0 0 10px #dbe5d6}.how{border-top:1px solid #d1dbcb;padding:20px 0}.how p{margin:4px 0 14px;color:#526153}.how strong{color:#172a2c}label{display:block;margin:16px 0;font-size:14px;line-height:1.7}input[type=checkbox]{width:18px;height:18px;margin:0 10px 0 0;vertical-align:middle;accent-color:#255e42}button,.button{cursor:pointer;border:0;background:#255e42;color:#fff;border-radius:8px;padding:13px 22px;display:inline-block;text-decoration:none;font-weight:600}button:hover,.button:hover{background:#174a31}button:disabled{opacity:.45;cursor:not-allowed}button.secondary{color:#3d5940;background:transparent;border:1px solid #b0c2a7}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #bf822e;outline-offset:4px}.small{color:#63705e;font-size:13px}.code{font-family:ui-monospace,monospace;font-size:13px;color:#48603e}.info{font-size:13px;color:#5a6854;margin:24px 0;line-height:1.7}details{margin:15px 0}summary{cursor:pointer;font-weight:600;font-size:14px}details p{font-size:13px}.status{font-size:14px;min-height:24px;color:#42633c}.error{color:#87432e}.actions{display:flex;align-items:center;gap:15px;flex-wrap:wrap;margin-top:22px}footer{padding-top:25px;border-top:1px solid #d1dbcb;font-size:12px;color:#697561;margin-top:45px;display:flex;justify-content:space-between;gap:20px}#play{max-width:770px;margin:auto}#taskTop{display:flex;align-items:center;justify-content:space-between;gap:20px}.stage-track{display:flex;gap:6px;margin:22px 0 30px}.stage-track span{height:5px;background:#d7dfd0;border-radius:8px;flex:1}.stage-track span.done{background:#255e42}.arena{height:clamp(280px,44vh,410px);background:#193d30;border-radius:16px;display:flex;align-items:center;justify-content:center;position:relative;color:#bcd4a7}.stimulus{font:500 64px/1 system-ui,sans-serif;display:flex;align-items:center;justify-content:center;min-width:90px;min-height:90px}.stimulus.target{font-size:0}.stimulus.target:after{content:'';display:block;width:70px;height:70px;border-radius:50%;background:#ddedbd}.arena-note{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#a0baa0;font-size:12px;letter-spacing:.05em}#feedback{min-height:30px;text-align:center;font-size:14px;margin:18px 0;color:#4f6349}.kbd{border:1px solid #bdc9b3;background:#fff;border-radius:5px;padding:2px 10px;font-size:12px}.center{text-align:center;max-width:620px;margin:38px auto}.checkpoint{font-size:64px;line-height:1.2;color:#255e42;margin:15px}.complete-mark{width:76px;height:76px;background:#dfe8d5;border-radius:50%;font-size:40px;color:#255e42;display:grid;place-items:center;margin:0 auto 25px}.center .actions{justify-content:center}.demo-label{background:#e9dec0;padding:10px;text-align:center;font-size:13px;color:#6a4d1e}.stage-label{font-size:12px;color:#66755e}#afterlinks a{margin:8px 0}[hidden]{display:none!important}@media(prefers-reduced-motion:no-preference){button,.button{transition:background .15s ease}}@media(max-width:720px){.layout{grid-template-columns:1fr;gap:10px}header{padding:20px}header span{font-size:11px}main{padding:26px 20px}.signal-art{display:none}.lead{font-size:17px}h1{font-size:57px}.layout>div:first-child{max-width:550px}footer{display:block}footer span{display:block}footer span+span{margin-top:6px}.arena{height:330px}}
+
+html{-webkit-text-size-adjust:100%}body{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}button,.button,summary{min-height:48px}label{min-height:44px}select,input[type=number]{font-size:16px!important}summary{display:flex;align-items:center}.input-choice{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.input-choice button{background:#e4e9dc;color:#254a32;border:1px solid #9db090;min-width:145px}.input-choice button[aria-pressed=true]{background:#255e42;color:white;border-color:#255e42}#responsePad{display:block;width:100%;min-height:78px;border-radius:16px;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;background:#dcebc8;color:#173d28;border:2px solid #b7cda2;font-size:18px}#responsePad:active{background:#c6ddb0}#responsePad:focus-visible{outline-color:#a67122}.arena{user-select:none;-webkit-user-select:none}.is-playing{overscroll-behavior:none}.center{overflow-wrap:anywhere}.stage-label{white-space:nowrap}header{gap:15px}header strong{white-space:nowrap}header span{text-align:right}
+@media(max-width:720px),(max-height:520px) and (max-width:960px){
+ header{padding:16px;padding-top:max(16px,env(safe-area-inset-top));align-items:flex-start}main{padding:22px 18px max(24px,env(safe-area-inset-bottom))}h1{font-size:clamp(45px,14vw,64px)}h2{font-size:27px}.center{margin:20px auto}.actions>button,.actions>.button{flex:1;min-width:130px}#ratingForm button,#surveyLink{width:100%}.demo-label{font-size:11px;line-height:1.45;padding:8px 15px;padding-top:max(8px,env(safe-area-inset-top))}.is-playing{overflow:hidden}.is-playing header,.is-playing footer,.is-playing .demo-label{display:none}.is-playing main{height:100svh;max-width:770px;padding: max(10px,env(safe-area-inset-top)) 16px max(12px,env(safe-area-inset-bottom))}.is-playing #play:not([hidden]){height:100%;display:flex;flex-direction:column;min-height:0}.is-playing #taskTop h2{font-size:25px;margin:3px 0 8px}.is-playing #taskTop .overline{margin:4px 0}.is-playing .stage-track{margin:5px 0 14px}.is-playing .arena{flex:1;min-height:120px;height:auto}.is-playing #feedback{font-size:13px;min-height:23px;margin:7px 0}.is-playing #responsePad{flex-shrink:0;min-height:76px}.is-playing .actions{margin-top:9px}.is-playing #leave{min-height:44px;padding:8px 16px;font-size:13px}.arena-note{font-size:10px;bottom:14px;padding:0 10px}.stimulus{font-size:60px}.stimulus.target:after{width:64px;height:64px}
+}
+@media(max-height:450px) and (max-width:960px){.is-playing #taskTop h2{font-size:20px;margin:0}.is-playing .stage-track{margin:4px 0 8px}.is-playing #responsePad{min-height:56px}.is-playing .arena{min-height:75px}.arena-note{display:none}.is-playing #feedback{margin:3px 0;min-height:20px}}
+.participation-notice{max-width:780px;margin:24px 0;padding:18px 20px;background:#e4eddd;border-left:5px solid #255e42;border-radius:8px;color:#193d30;line-height:1.6}.participation-notice>strong{font-size:18px}.participation-notice p{margin:6px 0 0}.form-next-step{padding:20px;margin:24px 0;background:#e4eddd;border:1px solid #b5c9aa;border-radius:12px}.form-next-step>p:first-child{margin:0 0 10px;font-size:19px}.form-next-step .button{width:100%;min-height:54px}.form-next-step .small{margin:12px 0 4px}.form-next-step .code{margin:4px 0 0}#finish{max-width:760px}.comparison{margin:28px 0;text-align:left;padding:24px;background:#fff;border:1px solid #d5dcd3;border-radius:14px}.comparison h3{margin:0 0 6px;font-size:23px;letter-spacing:-.025em}.comparison table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}.comparison th,.comparison td{padding:12px 7px;border-bottom:1px solid #e0e5db;text-align:right}.comparison th:first-child,.comparison td:first-child{text-align:left;padding-left:0}.comparison th{font-size:12px;color:#546254;line-height:1.4}.comparison tfoot{font-weight:700}.comparison p{font-size:13px;color:#526153}.comparison .interpretation{font-size:16px;font-weight:600;color:#255e42;margin:18px 0 6px}@media(max-width:480px){.comparison{padding:18px 12px}.comparison table{font-size:12px}.comparison th,.comparison td{padding:11px 4px}.comparison th{font-size:11px}}
+.instruction-card {
+  margin: 18px 0;
+  padding: 16px;
+  border: 1px solid #c7d5c0;
+  border-radius: 12px;
+  background: #edf3e9;
+  text-align: left;
+}
+.instruction-card p { margin: 0 0 8px; }
+.instruction-card p:last-child { margin-bottom: 0; }
+.selected-input { font-weight: 700; color: #255e42; }
+#changeControls { margin: 0; }
+#changeControls summary { color: #255e42; width: fit-content; }
+#changeControls .input-choice { justify-content: flex-start; }
+.comparison summary { display: list-item; min-height: 44px; line-height: 44px; color: #255e42; }
+</style></head><body><div id="demoBanner" class="demo-label" hidden>Preview only · No responses are sent or collected. The Google Forms connection is not active in this preview.</div><header><strong class="brand">GROUP 57</strong><span>One session · About 3–4 minutes</span></header><main>
+<section id="welcome"><p class="overline">Group 57 research study</p><h1>Catch<br>the signal.</h1><div class="participation-notice" role="note" aria-label="Important: complete both parts"><strong>Important: Complete both parts of the study.</strong><p><strong>First, do the short activity. A Google Form will be shared when you finish. Please fill in that Form to complete the study.</strong></p></div><div class="layout"><div><p class="lead">Respond once while each circle is visible.</p><div class="signal-art" aria-hidden="true"><div class="orbit"><div><span class="core"></span></div></div></div><div class="how"><p><strong>8 warm-ups, then 3 short stages.</strong><br>Each stage has 10 signals and a few short questions.</p><p><strong>Play on your phone, tablet or computer.</strong><br>Keep this tab visible and lift your finger or release Space between responses.</p></div></div><div><h3>Before we begin</h3><p class="small">This study includes a short visual activity and a Google Form. You can complete both in one visit. Taking part is voluntary.</p><p class="code" id="participantCode"></p><details><summary>Study information & privacy</summary><p>The task may cause mild fatigue. Stop if uncomfortable. There is no flashing or sound. You can stop before submitting without penalty. After submission, responses cannot be withdrawn. Do not collect data while driving or crossing a road.</p><p>We store coded reaction times, timing-quality checks, consent and basic device/browser details in a private Google Sheet controlled by the research team. Google Forms store the survey responses in that Sheet too. We do not ask for your name, email, diagnosis, camera or microphone access. Your random code links the game and survey records. Avoid identifying details in optional answers.</p><p>Google and the hosting provider process requests under their own policies. The research team is Group 57. You may leave before submitting. Your activity responses are sent when you choose Save activity and continue to Form after the third stage. The Google Form submits the questionnaire separately. Submitted responses cannot be withdrawn. Local pending records are kept only to retry a failed save. A code is not a guarantee of anonymity.</p><p id="studyDetails">Research team: Group 57.</p></details><label><input id="adult" type="checkbox">I am at least 18 years old and currently a college student.</label><label><input id="consent" type="checkbox">I have read the study information, had a chance to ask questions, and agree to participate and share my coded responses for this project. I understand that submitted responses cannot be withdrawn.</label><div class="actions"><button id="begin" disabled>Let’s try it <span aria-hidden="true">↗</span></button></div><p class="status" id="connectionStatus" role="status">Checking study availability…</p><p class="small">Your results save automatically when the task is complete. You won’t need to upload a file or copy a score.</p></div></div></section>
+<section id="instructions" class="center" hidden>
+  <p class="overline">Part 1 of 2 · Activity</p>
+  <h2>How to play</h2>
+  <p>Watch for the circle and respond once while it’s visible. <strong>Quick responses earn no points.</strong></p>
+  <p>After <strong>A or C</strong>, the circle usually appears sooner. After <strong>B or D</strong>, it usually appears later. Sometimes the timing changes.</p>
+  <div class="instruction-card">
+    <p id="selectedInput" class="selected-input" role="status"></p>
+    <p id="responseInstructions"></p>
+    <details id="changeControls">
+      <summary>Change controls</summary>
+      <div class="input-choice" role="group" aria-label="Choose how to respond">
+        <button type="button" data-input-mode="pointer" aria-pressed="false">Touch or click</button>
+        <button type="button" data-input-mode="keyboard" aria-pressed="false">Keyboard</button>
+      </div>
+    </details>
+  </div>
+  <p class="small">Your controls are ready. Keep this tab visible and use the same controls throughout.</p>
+  <div class="actions">
+    <button id="practiceStart">Start warm-up</button>
+    <button id="backWelcome" class="secondary">Go back</button>
+  </div>
+</section>
+<section id="play" hidden><div id="taskTop"><div><p class="overline" id="phaseLabel">Warm-up</p><h2 id="stageTitle">Find your rhythm.</h2></div><span class="stage-label" id="progressText"></span></div><div class="stage-track" aria-label="Stage progress"><span></span><span></span><span></span></div><div class="arena"><div id="stimulus" class="stimulus" aria-label="Task stimulus">+</div><span id="arenaHint" class="arena-note">TAP THE PAD WHEN THE LIGHT APPEARS</span></div><p id="feedback" role="status"></p><button id="responsePad" type="button" aria-label="Response pad Tap when the light appears">Tap when the light appears</button><div class="actions"><button id="leave" class="secondary">Leave task</button></div></section>
+<section id="rating" class="center" hidden><p class="overline" id="ratingStage">Stage complete</p><h2 id="ratingTitle" tabindex="-1">How long did this stage feel from start to end?</h2>
+<form id="ratingForm"><label style="text-align:left">Your estimate in seconds<input id="feltSeconds" type="number" required min="1" max="180" step="1" inputmode="numeric" enterkeyhint="done" style="display:block;width:100%;padding:12px;margin-top:8px;border:1px solid #b0c2a7;border-radius:7px;background:white" placeholder="Enter seconds"></label><label style="text-align:left">How predictable was the circle timing in this stage?<select id="regularityRating" required style="display:block;width:100%;padding:12px;margin-top:8px;font:inherit;border:1px solid #b0c2a7;border-radius:7px;background:white"><option value="">Choose a rating</option><option value="1">1 · Not at all predictable</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7 · Completely predictable</option></select></label><p id="submissionNotice" class="small" hidden>Your game responses will be sent to Group 57 and cannot be withdrawn. The Google Form is your next step.</p><button type="submit" id="saveRating">Save estimate & continue</button></form></section><section id="checkpoint" class="center" hidden><p class="overline" id="checkpointLabel">Warm-up complete</p><div class="checkpoint" id="checkpointNumber" aria-hidden="true">✓</div><h2 id="checkpointTitle">Ready for Stage 1?</h2><p id="checkpointText">Three short stages next. Take a breath and begin when you’re ready.</p><div class="actions"><button id="continueTask">Start the game</button><button id="leaveCheckpoint" class="secondary">Leave task</button></div></section>
+<section id="finish" class="center" hidden><p class="overline" id="finishLabel">Part 2 of 2 · Google Form</p><h2 id="finishTitle" tabindex="-1">Saving your responses…</h2><p id="saveStatus" role="status">Please keep this page open for a moment.</p><div id="afterlinks" class="form-next-step" hidden><p><strong>Please submit the Google Form before closing this page.</strong></p><a id="surveyLink" class="button" target="_blank" rel="noopener">Open the Google Form ↗</a><p class="small">Your participant code is already filled in. No attachment or score is needed.</p><p class="code" id="finishCode"></p></div><details id="timeComparison" class="comparison" hidden><summary>View your timing results</summary><p>Three stages, side by side. A positive difference means your estimate was longer than the measured time.</p><table aria-label="Actual time compared with your estimates"><thead><tr><th scope="col">Stage</th><th scope="col">Actual<br>time</th><th scope="col">Your<br>estimate</th><th scope="col">Difference<br>(estimate − actual)</th></tr></thead><tbody id="comparisonRows"></tbody><tfoot><tr><th scope="row">Total</th><td id="totalActual"></td><td id="totalPredicted"></td><td id="totalDifference"></td></tr></tfoot></table><p id="comparisonInterpretation" class="interpretation"></p><p>Totals cover the three measured stages only. Warm-up, questions and breaks between stages are excluded. Your estimate is how long the stage felt, reported afterwards.</p><p id="comparisonWarning" hidden>* A stage was interrupted or had a timing issue. Its measured duration may include a pause; interpret the comparison with care.</p></details><button id="retry" hidden>Retry saving</button><p id="demoEnd" class="small" hidden>Preview complete. In the connected version, the task saves automatically and a button opens your Google Form with the study code already filled in.</p></section>
+<section id="stopped" class="center" hidden><h2>You’ve left the task.</h2><p>No partial trial responses have been sent. You can close this page.</p><button id="restart" class="secondary">Return to the start</button></section>
+<footer><span>Group 57 · Student research pilot</span><span>Participation is voluntary. This is not a diagnostic test.</span></footer></main><script type="module">
+const VERSION='g57-signal-2.4';
+const PLAN={practice:8,main:30,block:10,stages:3,responseWindow:1000};
+const shuffle=(input,random=Math.random)=>{const a=[...input];for(let i=a.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+function makeBlock(regularity,stage_number,random=Math.random){
+  const expectedCount=regularity==='more_regular'?4:3,out=[];
+  for(const delay of [600,1200])for(const expected of [true,false])for(let i=0;i<(expected?expectedCount:5-expectedCount);i++){
+    const expectedCue=delay===600?'A':'B';out.push({phase:'main',stage_number,regularity,expected_probability:expectedCount/5,cue:expected?expectedCue:(expectedCue==='A'?'B':'A'),condition:expected?'expected':'unexpected',planned_delay_ms:delay});
+  }return shuffle(out,random);
+}
+function variedCues(rows,random){const pools={early:shuffle(['A','C','A','C','A'],random),late:shuffle(['B','D','B','D','B'],random)};return rows.map(r=>({...r,cue:pools[r.cue==='A'?'early':'late'].pop()}));}
+function makeStages(random=Math.random){const bases=shuffle([350,650,950],random);return shuffle(['more_regular','less_regular',random()<.5?'more_regular':'less_regular'],random).map((r,i)=>variedCues(makeBlock(r,i+1,random),random).map(t=>({...t,fixation_ms:bases[i]+Math.floor(random()*101)})));}
+function makeTrials(phase='main',random=Math.random){
+  if(phase==='main')return makeStages(random).flat();
+  const out=[];for(const delay of [600,1200])for(const expected of [true,false])for(let i=0;i<(expected?3:1);i++){const c=delay===600?'A':'B';out.push({phase:'practice',stage_number:0,regularity:'practice',expected_probability:.75,cue:expected?c:(c==='A'?'B':'A'),condition:expected?'expected':'unexpected',planned_delay_ms:delay});}return variedCues(shuffle(out,random),random).map(r=>({...r,fixation_ms:450}));
+}
+function median(a){const s=[...a].sort((x,y)=>x-y),n=s.length;return n?(n%2?s[(n-1)/2]:(s[n/2-1]+s[n/2])/2):null;}
+function quality(row){
+  if(row.interrupted)return 'interrupted';if(row.anticipations)return 'anticipation';if(row.rt_ms===null)return 'miss';
+  if(row.rt_ms<100)return 'too_fast';if(row.rt_ms>PLAN.responseWindow)return 'too_slow';if(row.max_frame_gap_ms>50)return 'frame_gap';return 'valid';
+}
+function summary(rows){
+  const main=rows.filter(r=>r.phase==='main'&&quality(r)==='valid'),counts={},medians={},diff=[];
+  for(const delay of [600,1200]){
+    for(const condition of ['expected','unexpected']){const key=condition+'_'+delay;const values=main.filter(r=>r.planned_delay_ms===delay&&r.condition===condition).map(r=>r.rt_ms);counts[key]=values.length;medians[key]=median(values);}
+    diff.push(medians['unexpected_'+delay]===null||medians['expected_'+delay]===null?null:medians['unexpected_'+delay]-medians['expected_'+delay]);
+  }
+  const input_counts={};for(const row of main)if(row.input_type)input_counts[row.input_type]=(input_counts[row.input_type]||0)+1;
+  const mixed_input=Object.keys(input_counts).length>1;
+  const sufficient=!mixed_input&&Object.entries(counts).every(([key,n])=>n>=(key.startsWith('unexpected')?3:8));
+  return {valid_main:main.length,total_main:rows.filter(r=>r.phase==='main').length,counts,medians,input_counts,mixed_input,sufficient,surprise_cost_ms:sufficient&&!diff.includes(null)?(diff[0]+diff[1])/2:null};
+}
+function durationSummary(stages){
+  const reports=stages.map(s=>{const actual=Number.isFinite(s.actual_duration_s)?s.actual_duration_s:null;return {stage_number:s.stage_number,actual_duration_s:actual,predicted_duration_s:s.felt_duration_s,time_difference_s:actual===null?null:s.felt_duration_s-actual,interrupted:!!s.interrupted,timing_issue:!!s.timing_issue};});
+  const available=reports.length>0&&reports.every(s=>s.actual_duration_s!==null);
+  const actual=available?reports.reduce((n,s)=>n+s.actual_duration_s,0):null;
+  const predicted=reports.reduce((n,s)=>n+s.predicted_duration_s,0);
+  return {stages:reports,actual_duration_s:actual,predicted_duration_s:predicted,time_difference_s:actual===null?null:predicted-actual};
+}
+
+// Input state shared by keyboard and pointer controls. A held contact cannot repeat.
+function createResponseController({now,onPress,onCancel=()=>{}}){
+ let mode='pointer',keyHeld=false,pointerId=null;
+ return {
+  setMode(value){if(!['pointer','keyboard'].includes(value))throw Error('invalid_input_mode');mode=value;this.reset();},
+  get held(){return keyHeld||pointerId!==null;},
+  reset(){keyHeld=false;pointerId=null;},
+  keyDown(e){if(mode!=='keyboard'||e.code!=='Space')return false;if(!e.repeat&&!keyHeld){keyHeld=true;onPress('keyboard',now());}return true;},
+  keyUp(e){if(e.code==='Space')keyHeld=false;},
+  pointerDown(e){if(mode!=='pointer'||e.isPrimary===false||e.button!==0||pointerId!==null||!['touch','mouse','pen'].includes(e.pointerType))return false;pointerId=e.pointerId;onPress(e.pointerType,now());return true;},
+  pointerUp(e){if(e.pointerId===pointerId)pointerId=null;},
+  pointerCancel(e){if(e.pointerId===pointerId){pointerId=null;onCancel();}}
+ };
+}
+
+const $=s=>document.querySelector(s),DEMO=document.documentElement.dataset.mode==='demo',KEY=DEMO?'g57-signal-single-v24-demo':'g57-signal-single-v24';
+let config=null,storageOK=true,state={participant_id:'G57-'+crypto.randomUUID().replaceAll('-','').slice(0,8).toUpperCase(),pending:null,saved:false};
+try{const prior=localStorage.getItem(KEY);if(prior)state=JSON.parse(prior);localStorage.setItem(KEY,JSON.stringify(state));}catch{storageOK=false;}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(state));return true;}catch{storageOK=false;return false;}}
+function view(id){for(const el of document.querySelectorAll('main>section'))el.hidden=el.id!==id;document.body.classList.toggle('is-playing',id==='play');window.scrollTo({top:0,behavior:'instant'});}
+function showComparison(){
+ const report=state.comparison;if(!report)return;
+ const seconds=value=>value===null?'Unavailable':`${value.toFixed(1)} s`;
+ const difference=value=>value===null?'Unavailable':`${value>0?'+':''}${value.toFixed(1)} s`;
+ const body=$('#comparisonRows');body.replaceChildren();
+ for(const stage of report.stages){const row=document.createElement('tr');for(const text of [`Stage ${stage.stage_number}${stage.interrupted?' *':''}`,seconds(stage.actual_duration_s),seconds(stage.predicted_duration_s),difference(stage.time_difference_s)]){const cell=document.createElement('td');cell.textContent=text;row.append(cell);}body.append(row);}
+ $('#totalActual').textContent=seconds(report.actual_duration_s);$('#totalPredicted').textContent=seconds(report.predicted_duration_s);$('#totalDifference').textContent=difference(report.time_difference_s);
+ const delta=report.time_difference_s;
+ $('#comparisonInterpretation').textContent=delta===null?'Some timing measurements were unavailable.':Math.abs(delta)<.05?'Your total estimate matched the measured time to the nearest tenth of a second.':`Your total estimate was ${Math.abs(delta).toFixed(1)} seconds ${delta>0?'longer':'shorter'} than the measured time.`;
+ $('#comparisonWarning').hidden=!report.stages.some(s=>s.interrupted||s.timing_issue);
+ $('#timeComparison').hidden=false;
+}
+function showSurveyStep(){
+ if(!config)return;
+ $('#finishTitle').textContent='Complete the Google Form';
+ $('#saveStatus').textContent='Your activity responses are saved.';
+ $('#surveyLink').href=config.survey_form.replaceAll('G57-00000000',state.participant_id);
+ $('#afterlinks').hidden=false;
+ $('#finishCode').textContent='Your study code · '+state.participant_id;
+ showComparison();
+ $('#finishTitle').focus();
+}
+$('#participantCode').textContent='Your study code · '+state.participant_id;$('#demoBanner').hidden=!DEMO;
+async function init(){
+ if(DEMO){
+  $('#connectionStatus').textContent='Demo mode. You can try the activity without sending responses.';
+  $('#begin').disabled=false;
+  $('#begin').textContent='Try the demo';
+  $('#adult').closest('label').hidden=true;
+  $('#consent').closest('label').hidden=true;
+  $('#welcome details').hidden=true;
+  $('#participantCode').hidden=true;
+  $('#welcome .participation-notice').innerHTML='<strong>Portfolio demo</strong><p>Try eight practice signals and three short stages, then see how your estimates compare with the measured time.</p>';
+  $('#welcome h3').textContent='Try the study activity';
+  $('#welcome h3 + p').textContent='Use a touchscreen, mouse or keyboard. The demo runs entirely in your browser.';
+  $('#connectionStatus + p').hidden=true;
+  $('#demoEnd').textContent='In the research version, this screen also links to the follow-up Google Form.';
+  return;
+ }
+ if(!storageOK){$('#connectionStatus').textContent='Please enable browser storage so the task can recover a failed save.';return;}
+ try{const r=await fetch('/api/config',{cache:'no-store'});const c=await r.json();if(!r.ok||!c.ok)throw Error(c.error||'Study unavailable');config=c;
+  $('#studyDetails').textContent=[`Research team: ${c.researcher_contact}.`,c.supervisor_contact?`Supervisor: ${c.supervisor_contact}.`:'',c.retention?`Data retention: ${c.retention}.`:'',c.study_dates?`Study dates: ${c.study_dates}.`:'','Submitted responses cannot be withdrawn.'].filter(Boolean).join(' ');
+  $('#connectionStatus').textContent='Study ready. Please read the information and consent to begin.';$('#begin').disabled=false;
+  if(state.pending){view('finish');if(state.saved)showSurveyStep();else saveTask();}
+ }catch(error){$('#connectionStatus').textContent=error.message==='Failed to fetch'?'The study is not available right now. Please ask the researcher.':error.message;$('#connectionStatus').classList.add('error');}
+}
+$('#begin').onclick=()=>{if(DEMO){view('instructions');return;}if(!$('#adult').checked||!$('#consent').checked){$('#connectionStatus').textContent='Please confirm both statements before starting.';return;}state.consent={accepted:true,adult_student:true,at:new Date().toISOString(),version:VERSION};persist();view('instructions');};
+$('#backWelcome').onclick=()=>view('welcome');
+let responseMode=(matchMedia('(pointer:coarse)').matches||navigator.maxTouchPoints>0)?'pointer':'keyboard';
+let active=false,phase='practice',queue=[],index=0,rows=[],stages=[],session='',mode='idle',raf=0,feedbackTimer=0,trial=null,cueOnset=0,onset=null,lastFrame=0,gap=0,anticipations=0,firstRT=null,firstInput=null,blockStart=null,blockInterrupted=false,blockTimingIssue=false,pendingStage=null,continueAction=null;
+function showCheckpoint(label,title,text,button,fn){mode='checkpoint';view('checkpoint');$('#checkpointLabel').textContent=label;$('#checkpointTitle').textContent=title;$('#checkpointText').textContent=text;$('#checkpointNumber').textContent=label==='Paused'?'Ⅱ':'✓';$('#continueTask').textContent=button;continueAction=fn;}
+$('#continueTask').onclick=()=>{if(input.held)return;view('play');continueAction?.();};
+function beginPhase(p){phase=p;queue=makeTrials(p);index=0;blockStart=null;blockInterrupted=false;blockTimingIssue=false;nextTrial();}
+$('#practiceStart').onclick=()=>{active=true;input.setMode(responseMode);rows=[];stages=[];session=crypto.randomUUID();view('play');beginPhase('practice');};
+function nextTrial(){
+ if(!active)return;if(index===queue.length){if(phase==='practice')showCheckpoint('Warm-up complete','Ready for Stage 1?','The warm-up is complete. Keep this tab visible and respond once while each circle is visible.','Start Stage 1',()=>beginPhase('main'));else complete();return;}
+ mode='iti';trial=queue[index];onset=null;firstRT=null;firstInput=null;lastFrame=0;gap=0;anticipations=0;$('#stimulus').className='stimulus';$('#stimulus').textContent='+';$('#feedback').textContent='';$('#phaseLabel').textContent=phase==='practice'?'Warm-up':`Stage ${trial.stage_number} of ${PLAN.stages}`;$('#stageTitle').textContent=phase==='practice'?'Find your rhythm.':'Catch the signal.';$('#progressText').textContent=phase==='practice'?`${index+1} / 8`:`${index%10+1} / 10`;
+ for(const [i,el]of [...document.querySelectorAll('.stage-track span')].entries())el.classList.toggle('done',phase==='main'&&i<trial.stage_number-1);
+ const started=performance.now();function iti(t){if(!active||mode!=='iti')return;if(t-started>=(trial.fixation_ms??450)&&!input.held){mode='cue';$('#stimulus').textContent=trial.cue;cueOnset=t;lastFrame=t;if(phase==='main'&&blockStart===null)blockStart=t;raf=requestAnimationFrame(tick);}else raf=requestAnimationFrame(iti);}raf=requestAnimationFrame(iti);
+}
+function tick(t){
+ if(!active||!['cue','target'].includes(mode))return;gap=Math.max(gap,t-lastFrame);lastFrame=t;
+ if(mode==='cue'&&t-cueOnset>=trial.planned_delay_ms){onset=t;mode='target';$('#stimulus').textContent='';$('#stimulus').className='stimulus target';}
+ if(mode==='target'&&t-onset>=PLAN.responseWindow){record(firstRT,false,t);return;}raf=requestAnimationFrame(tick);
+}
+function record(rt,interrupted,endTime=performance.now()){
+ cancelAnimationFrame(raf);const row={...trial,trial_number:index+1,rt_ms:rt===null?null:Math.round(rt),actual_delay_ms:onset===null?null:Math.round(onset-cueOnset),anticipations,max_frame_gap_ms:Math.round(gap),interrupted,input_type:firstInput,response_mode:responseMode,viewport_width:innerWidth,viewport_height:innerHeight,recorded_at:new Date().toISOString()};row.quality=quality(row);rows.push(row);index++;mode='feedback';$('#stimulus').className='stimulus';$('#stimulus').textContent='+';
+ if(phase==='main'){blockInterrupted ||= interrupted;blockTimingIssue ||= row.max_frame_gap_ms>50;if(index%PLAN.block===0){pendingStage={stage_number:row.stage_number,regularity:row.regularity,expected_probability:row.expected_probability,actual_duration_s:blockStart===null?null:(endTime-blockStart)/1000,interrupted:blockInterrupted,timing_issue:blockTimingIssue};showRating();return;}}
+ if(interrupted){showCheckpoint('Paused','Let’s pause here.','The interrupted signal was flagged. The stage will also be marked as interrupted. Continue with this tab visible.','Resume',nextTrial);return;}
+ if(phase==='practice'){$('#feedback').textContent=rt!==null?'Response recorded.':anticipations?'Wait until the circle appears.':responseMode==='pointer'?'Tap the pad once while the circle is visible.':'Press Space once while the circle is visible.';feedbackTimer=setTimeout(nextTrial,550);}else nextTrial();
+}
+function showRating(){mode='rating';view('rating');$('#ratingStage').textContent=`Stage ${pendingStage.stage_number} of ${PLAN.stages} complete`;$('#ratingForm').reset();$('#submissionNotice').hidden=pendingStage.stage_number!==PLAN.stages;$('#saveRating').textContent=pendingStage.stage_number===PLAN.stages?'Save activity and continue to Form':`Save and start Stage ${pendingStage.stage_number+1}`;$('#ratingTitle').focus();}
+$('#ratingForm').onsubmit=e=>{e.preventDefault();if(!pendingStage)return;const estimate=Number($('#feltSeconds').value);stages.push({...pendingStage,felt_duration_s:estimate,predictability:Number($('#regularityRating').value),felt_actual_ratio:pendingStage.actual_duration_s>0?estimate/pendingStage.actual_duration_s:null,estimated_at:new Date().toISOString()});$('#feltSeconds').blur();$('#regularityRating').blur();pendingStage=null;blockStart=null;blockInterrupted=false;blockTimingIssue=false;view('play');nextTrial();};
+function pause(){if(!active)return;cancelAnimationFrame(raf);clearTimeout(feedbackTimer);input.reset();if(['iti','cue','target'].includes(mode))record(firstRT,true);else if(mode==='feedback')showCheckpoint('Paused','Take your time.','Continue with this tab visible when you’re ready.','Resume',nextTrial);}
+addEventListener('blur',pause);document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
+function leave(){active=false;cancelAnimationFrame(raf);clearTimeout(feedbackTimer);mode='idle';rows=[];stages=[];view('stopped');}
+$('#leave').onclick=leave;$('#leaveCheckpoint').onclick=leave;$('#restart').onclick=()=>view('welcome');
+const responding=()=>active&&['iti','cue','target'].includes(mode);
+const input=createResponseController({now:()=>performance.now(),onPress:(kind,at)=>{if(mode==='cue')anticipations++;else if(mode==='target'&&firstRT===null){firstRT=at-onset;firstInput=kind;}},onCancel:()=>{if(responding())pause();}});
+function setResponseMode(value){
+ responseMode=value;
+ input.setMode(value);
+ const pointer=value==='pointer';
+ for(const button of document.querySelectorAll('[data-input-mode]')){
+  const selected=button.dataset.inputMode===value;
+  button.setAttribute('aria-pressed',String(selected));
+  const label=button.dataset.inputMode==='pointer'?'Touch or click':'Keyboard';
+  button.textContent=selected?label+' ✓ Selected':label;
+ }
+ $('#responsePad').hidden=!pointer;
+ $('#arenaHint').textContent=pointer?'TAP ONCE WHILE THE CIRCLE IS VISIBLE':'PRESS SPACE ONCE WHILE THE CIRCLE IS VISIBLE';
+ $('#responseInstructions').textContent=pointer?'Tap the response pad once while the circle is visible, then lift your finger.':'Press Space once while the circle is visible, then release it.';
+ $('#selectedInput').textContent=pointer?'✓ Touch or click ready':'✓ Keyboard ready';
+}
+for(const button of document.querySelectorAll('[data-input-mode]')){
+ button.onclick=()=>{
+  setResponseMode(button.dataset.inputMode);
+  $('#changeControls').open=false;
+  $('#changeControls summary').focus();
+ };
+}
+setResponseMode(responseMode);
+addEventListener('keydown',e=>{if(responding()&&input.keyDown(e))e.preventDefault();});
+addEventListener('keyup',e=>input.keyUp(e));
+const pad=$('#responsePad');
+pad.addEventListener('pointerdown',e=>{if(!responding())return;if(input.pointerDown(e)){e.preventDefault();pad.setPointerCapture(e.pointerId);}});
+addEventListener('pointerup',e=>input.pointerUp(e));
+addEventListener('pointercancel',e=>input.pointerCancel(e));
+pad.addEventListener('lostpointercapture',e=>input.pointerCancel(e));
+// Rotation changes the viewing conditions. Treat it like another task interruption.
+if(screen.orientation?.addEventListener)screen.orientation.addEventListener('change',pause);else addEventListener('orientationchange',pause);
+
+function complete(){
+ active=false;cancelAnimationFrame(raf);mode='idle';state.comparison=durationSummary(stages);persist();view('finish');if(DEMO){showComparison();$('#timeComparison').open=true;$('#finishLabel').textContent='Activity preview';$('#finishTitle').textContent='Game complete.';$('#saveStatus').textContent='Compare your estimates with the measured durations below.';$('#demoEnd').hidden=false;return;}
+ state.pending={version:VERSION,participant_id:state.participant_id,session_id:session,consent:state.consent,trials:rows,stages,completed_at:new Date().toISOString(),device:{user_agent:navigator.userAgent,width:innerWidth,height:innerHeight,pixel_ratio:devicePixelRatio,response_mode:responseMode,max_touch_points:navigator.maxTouchPoints||0,orientation:screen.orientation?.type||'unknown'}};state.saved=false;persist();saveTask();
+}
+async function saveTask(){
+ $('#retry').hidden=true;$('#finishTitle').textContent='Saving your responses…';$('#saveStatus').textContent='Please keep this page open for a moment.';
+ try{const r=await fetch('/api/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(state.pending),signal:AbortSignal.timeout(30000)});const result=await r.json();if(!r.ok||!result.ok)throw Error(result.error||'save_failed');state.saved=true;state.receipt=result.receipt;state.comparison=result.comparison||state.comparison;state.pending={participant_id:state.participant_id,session_id:state.pending.session_id,completed_at:state.pending.completed_at};persist();showSurveyStep();}
+ catch{$('#finishTitle').textContent='Let’s try saving again.';$('#saveStatus').textContent='We could not confirm the save. Your completed task is kept on this device. Keep this page and use Retry; you do not need to play again or upload a file.';$('#retry').hidden=false;}
+}
+$('#retry').onclick=saveTask;init();
+
+</script></body></html>
